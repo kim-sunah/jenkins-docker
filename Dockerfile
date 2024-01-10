@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:lts
 USER root
 
 RUN mkdir -p /tmp/download && \
@@ -8,3 +8,5 @@ RUN mkdir -p /tmp/download && \
     rm -rf /tmp/download && \
     groupadd -g 999 docker && \
     usermod -aG docker jenkins
+
+USER jenkins
